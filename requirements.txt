@@ -1,0 +1,30 @@
+# Python 3.10 environment
+# ⚠️ NOTE: For CUDA 11.8, install PyTorch manually:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+
+numpy
+torch
+torchvision
+pytorch-lightning
+smplx==0.1.28
+pyrender
+opencv-python
+yacs
+scikit-image
+einops
+timm
+dill
+pandas
+
+# From GitHub
+git+https://github.com/facebookresearch/detectron2
+git+https://github.com/mattloper/chumpy
+
+# For training and logging
+rich
+hydra-core
+hydra-submitit-launcher
+hydra-colorlog
+pyrootutils
+webdataset
+
