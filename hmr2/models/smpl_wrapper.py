@@ -35,7 +35,8 @@ class SMPL(smplx.SMPLLayer):
                 0.25*(joints[:,[9,12]]-joints[:,[12,9]]) + \
                 0.5*(joints[:,[8]] - 0.5*(joints[:,[9,12]] + joints[:,[12,9]]))
         if hasattr(self, 'joint_regressor_extra'):
-            extra_joints = vertices2joints(self.joint_regressor_extra, smpl_output.vertices)
+            extra_joints = vertices2joints(self.joint_regressor_extra, smpl_output.vertices)    # Depends on joint_regressor_extra e.g., phalp/3D/SMPL_to_J19.pkl has 19 joints
             joints = torch.cat([joints, extra_joints], dim=1)
+            # print(f"Joints shape: {joints.shape}")
         smpl_output.joints = joints
         return smpl_output
